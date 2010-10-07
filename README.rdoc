@@ -31,17 +31,25 @@ The same logic applies to actions
   # => true
   
   action_is('edit','index')
-  # => true
+  # => false
   
 If you want to be specific:
 
   controller_action_is('posts','new')
   # => true
   
+  controller_action_is('posts','index')
+  # => false
+  
 Along with these methods you get a navigational link_to helper:
 
   nav_link_to("Posts", posts_path, controller_is('posts'), options={})
-
+  
+  # => "<a href="/posts" class="active"></a>"
+  
+  nav_link_to("Users", users_path, controller_is('users'), options={})
+  
+  # => "<a href="/posts" class="inactive"></a>"
 
 Notice that the third argument is a condition which we conveniently slap our helper into
 This will add a class of "active" or "inactive" to your link depending on whether that condition is true.
