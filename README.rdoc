@@ -33,22 +33,29 @@ The same logic applies to actions
   action_is('edit','index')
   # => true
   
+If you want to be specific:
+
+  controller_action_is('posts','new')
+  # => true
+  
 Along with these methods you get a navigational link_to helper:
 
-nav_link_to("Posts", posts_path, controller_is('posts'), options={})
+  nav_link_to("Posts", posts_path, controller_is('posts'), options={})
 
+
+Notice that the third argument is a condition which we conveniently slap our helper into
 This will add a class of "active" or "inactive" to your link depending on whether that condition is true.
 
 Note: An alternative for styling would be to include the controller and action names in your body id/class and use plain old CSS inheritance.
   
-  # application layout
+In your application layout
   
   %body{:id => controller_name, :class => action_name}
     %ul#navigation
       %li= link_to "Posts", posts_path
       %li= link_to "Users", users_path
 
-  # stylesheet
+In your stylesheet
   
   ul#navigation li a {
     background:white
@@ -58,7 +65,7 @@ Note: An alternative for styling would be to include the controller and action n
     background:red
   }
 
-I prefer to explicitly use the "active" classes, but whatever floats your boat.
+I prefer to explicitly use the "active" classes for cleaner CSS, but whatever floats your boat.
 
 == Note on Patches/Pull Requests
  
