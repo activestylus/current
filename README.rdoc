@@ -1,6 +1,64 @@
-= current
+= Current
 
-Description goes here.
+Gives you a couple of simple helpers which check the current request in a Rails application.
+It's sort of a current_page? on steroids
+
+== Installation
+
+  gem install current
+  
+== Usage
+
+Let's say you have a PostsController with a new action and you are currently on that page
+
+  controller_is('posts')
+  # => true
+
+This method also accepts multiple arguments and will return true if any of them match
+
+  controller_is('posts','users')
+  # => true
+  
+  controller_is('sessions','users')
+  # => false
+  
+The same logic applies to actions
+
+  action_is('new')
+  # => true
+  
+  action_is('new','edit')
+  # => true
+  
+  action_is('edit','index')
+  # => true
+  
+Along with these methods you get a navigational link_to helper:
+
+nav_link_to("Posts", posts_path, controller_is('posts'), options={})
+
+This will add a class of "active" or "inactive" to your link depending on whether that condition is true.
+
+Note: An alternative for styling would be to include the controller and action names in your body id/class and use plain old CSS inheritance.
+  
+  # application layout
+  
+  %body{:id => controller_name, :class => action_name}
+    %ul#navigation
+      %li= link_to "Posts", posts_path
+      %li= link_to "Users", users_path
+
+  # stylesheet
+  
+  ul#navigation li a {
+    background:white
+  }
+  body#posts ul#navigation li a,
+  body#users ul#navigation li a {
+    background:red
+  }
+
+I prefer to explicitly use the "active" classes, but whatever floats your boat.
 
 == Note on Patches/Pull Requests
  

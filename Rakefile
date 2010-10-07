@@ -5,12 +5,15 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "current"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = "Series of convenience to test which page you are on"
+    gem.description = "Picks up where Rails current_page? helper leaves off"
     gem.email = "stevendgarcia@gmail.com"
     gem.homepage = "http://github.com/activestylus/current"
     gem.authors = ["Steven Garcia"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.version = "1.0.1"
+    gem.add_development_dependency "shoulda", ">= 0"
+    gem.add_development_dependency "mocha", ">= 0"
+    gem.add_development_dependency "rails", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
