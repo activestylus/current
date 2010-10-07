@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "current.gemspec",
+     "init.rb",
      "lib/current.rb",
      "test/helper.rb",
      "test/test_current.rb"
