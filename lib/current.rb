@@ -1,3 +1,10 @@
+module ActionView
+  module Helpers
+    include Current
+  end
+end
+
+
 module Current
   
   def controller_is(*attrs)
