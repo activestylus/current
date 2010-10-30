@@ -21,7 +21,7 @@ module Current
   end                         
 
   def nav_link_to(text,path,condition, options={})
-    klass = active_if(condition) + " #{options[:class]}"
+    klass = active_if?(condition) + " #{options[:class]}"
     linktext = condition ? "#{text}" : text
     link_to(raw(linktext), path, options.merge(:class => klass.strip))
   end
