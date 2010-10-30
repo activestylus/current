@@ -10,7 +10,7 @@ begin
     gem.email = "stevendgarcia@gmail.com"
     gem.homepage = "http://github.com/activestylus/current"
     gem.authors = ["Steven Garcia"]
-    gem.version = "1.0.3"
+    gem.version = "1.0.4"
     gem.add_development_dependency "shoulda", ">= 0"
     gem.add_development_dependency "mocha", ">= 0"
     gem.add_development_dependency "rails", ">= 0"
