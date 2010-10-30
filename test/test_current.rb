@@ -28,61 +28,61 @@ class TestCurrent < ActionView::TestCase
       self.stubs(:action_name).returns('new')
     end
     
-    context "controller_is" do
+    context "controller_is?" do
       should "be true for users" do
-        assert controller_is('users')
+        assert controller_is?('users')
       end
 
       should "be true for users/new" do
-        assert controller_is('users', 'new')
+        assert controller_is?('users', 'new')
       end
 
       should "be false for jobs" do
-        assert !controller_is('jobs')
+        assert !controller_is?('jobs')
       end
     end
 
-    context "action_is" do
+    context "action_is?" do
       should "be true if current action is in the supplied list" do
-        assert action_is('new')
-        assert action_is('new', 'edit')
+        assert action_is?('new')
+        assert action_is?('new', 'edit')
       end
 
       should "be false if current action is not in the supplied list" do
-        assert !action_is('edit')
+        assert !action_is?('edit')
       end
     end
 
-    context "partial_is" do
+    context "partial_is?" do
       should "be true if params[:partial] is the specified value" do
         self.stubs(:params).returns({ :partial => 'boards' })
-        assert partial_is('boards')
+        assert partial_is?('boards')
       end
 
       should "be false if params[:partial] is not the specified value" do
         self.stubs(:params).returns({ :partial => 'askjfafew' })
-        assert !partial_is('boards')
+        assert !partial_is?('boards')
       end
     end
 
-    context "controller_action_is" do
+    context "controller_action_is?" do
       should "be true if for current controller/action combination" do
-        assert controller_action_is('users', 'new')
+        assert controller_action_is?('users', 'new')
       end
 
       should "be false for incorrect controller/action combination" do
-        assert !controller_action_is('accounts', 'edit')
-        assert !controller_action_is('jobs', 'new')
+        assert !controller_action_is?('accounts', 'edit')
+        assert !controller_action_is?('jobs', 'new')
       end
     end
 
-    context "active_if" do
+    context "active_if?" do
       should "return active if true" do
-        assert_equal 'active', active_if(true)
+        assert_equal 'active', active_if?(true)
       end
 
       should "return inactive if false" do
-        assert_equal 'inactive', active_if(false)
+        assert_equal 'inactive', active_if?(false)
       end
     end
   end
