@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{current}
-  s.version = "1.0.6"
+  s.version = "1.0.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Steven Garcia"]
-  s.date = %q{2010-10-31}
+  s.date = %q{2010-11-01}
   s.description = %q{Picks up where Rails current_page? helper leaves off}
   s.email = %q{stevendgarcia@gmail.com}
   s.extra_rdoc_files = [
