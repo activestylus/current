@@ -13,7 +13,7 @@ module Current
   end
 
   def controller_action_is?(c,a)
-    controller_is(c) && action_is(a)
+    controller_is?(c) && action_is?(a)
   end
 
   def active_if?(condition)
